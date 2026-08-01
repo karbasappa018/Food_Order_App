@@ -1,0 +1,35 @@
+{
+  "name": "food_order_app",
+  "version": "1.0.0",
+  "description": "food order app",
+  "keywords": [
+    "karan"
+  ],
+  "homepage": "https://github.com/karbasappa018/React#readme",
+  "bugs": {
+    "url": "https://github.com/karbasappa018/React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karbasappa018/React.git"
+  },
+  "license": "ISC",
+  "author": "Karbasappa Tadakale",
+  "type": "commonjs",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+    "browserlist":[
+    "last 2 Chrome version", 
+    "last 2 Firefox version"
+  ]
+}
