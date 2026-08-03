@@ -1,6 +1,8 @@
 import RestorantCard from "./RestaurantCard"; 
-import resList from "../utils/mockData";
-import { useState } from "react";
+import resList from "../utils/mockData"
+import { useState,useEffect } from "react";
+import Shimmer from "./Shimmer";
+
 
 
 
@@ -8,7 +10,32 @@ import { useState } from "react";
 
 const Body = () =>
 {
-    const [listOfResaurants, setListOfRestaurants] = useState(resList);
+    const [listOfResaurants, setListOfRestaurants] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    },[]);
+
+    const fetchData = async () => {
+    const response = await fetch(
+        //"https://6a6f445da7e173d95e458a64.mockapi.io/RestaurantData"
+        "https://6a706b6055c0ce38c3264648.mockapi.io/Data"
+        
+    );
+
+    const json = await response.json();
+    console.log(json);
+     setListOfRestaurants(json);  
+
+    
+    };
+
+    // Conditional Rendering 
+    
+    if(listOfResaurants.length === 0)
+     {
+        return <Shimmer/>;
+     }
     
     return (
         <div className="body">
@@ -22,6 +49,7 @@ const Body = () =>
                 }}
                 >Top Rated Restorants
                 </button>
+
 
             </div>
             <div className="res-container">
