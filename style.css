@@ -75,4 +75,9 @@
     background-color: #d1dbdbff;
     
 }
+
+.login {
+    padding:0 20px;
+    cursor: pointer;
+}
     

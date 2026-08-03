@@ -34,10 +34,12 @@ const Body = () =>
     
     if(listOfResaurants.length === 0)
      {
-        return <Shimmer/>;
+        return;
      }
     
-    return (
+    return listOfResaurants.length === 0 ?(
+        <Shimmer/>
+    ) : (
         <div className="body">
             <div className="filter">
                 <button className="filter-btn" onClick={()=> {
