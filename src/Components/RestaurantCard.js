@@ -1,3 +1,5 @@
+import { CDN_URL } from "../utils/constants";
+
 {/*
     // Optional Chaining
 
@@ -42,17 +44,25 @@ const RestorantCard = (props) =>
     const {resData} = props;
     return (
         <div className="res-card" style={{ backgroundColor:"#d1dbdbff"}}>
+           
             <img 
             className="res-logo"
             alt="res-logo" 
-            src={resData.data.imageUrl}
+            // src={resData.data.imageUrl}
+            src = {CDN_URL + resData.info.cloudinaryImageId}
             />
-            <h3>{resData.data.name}</h3>
+            {/* <h3>{resData.data.name}</h3>
             <h3>{resData.data.cuisines.join(",")}</h3>
             <h4>{resData.data.avgRating} </h4>
             <h4>{resData.data.costForTwo / 100} FOR TWO</h4>
-            <h4>{resData.data.deliveryTime} Minutes</h4>
-            <h4>38 Minutes</h4>
+            <h4>{resData.data.deliveryTime} Minutes</h4> */}
+
+             <h3>{resData.info.name}</h3>
+            <h3>{resData.info.cuisines.join(",")}</h3>
+            <h4>{resData.info.avgRating} </h4>
+            <h4>{resData.info.costForTwo} FOR TWO</h4>
+            <h4>{resData.info.sla.deliveryTime} Minutes</h4>
+            
 
         </div>
     )
